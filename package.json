@@ -1,0 +1,19 @@
+{
+  "name": "babel-plugin-attach-display-name",
+  "version": "1.0.0",
+  "description":
+    "babel plugin to automatically add the displayName property to functions",
+  "main": "attachDisplayName.js",
+  "repository":
+    "https://github.com/bumped-inc/babel-plugin-attach-display-name",
+  "author": "bumped",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "babel-plugin-tester": "^5.0.0",
+    "jest": "^22.4.3"
+  }
+}

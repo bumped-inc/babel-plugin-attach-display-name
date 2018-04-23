@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`attach-display-name does alter PREFIXEDPascalCase consts: does alter PREFIXEDPascalCase consts 1`] = `
+"
+const BLAHHey = f();
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+var $attachDisplayName = function (value, name) {
+  if (typeof value === 'function') {
+    try {
+      value.displayName = name;
+    } catch (error) {}
+  }
+
+  return value;
+};
+
+const BLAHHey = $attachDisplayName(f(), \\"BLAHHey\\");
+"
+`;
+
+exports[`attach-display-name does alter consts that are SequenceExpressions: does alter consts that are SequenceExpressions 1`] = `
+"
+const Alpha = (bravo(), charlie());
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+var $attachDisplayName = function (value, name) {
+  if (typeof value === 'function') {
+    try {
+      value.displayName = name;
+    } catch (error) {}
+  }
+
+  return value;
+};
+
+const Alpha = $attachDisplayName((bravo(), charlie()), \\"Alpha\\");
+"
+`;
+
+exports[`attach-display-name does alter consts with CallExpressions: does alter consts with CallExpressions 1`] = `
+"
+const Hey = f();
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+var $attachDisplayName = function (value, name) {
+  if (typeof value === 'function') {
+    try {
+      value.displayName = name;
+    } catch (error) {}
+  }
+
+  return value;
+};
+
+const Hey = $attachDisplayName(f(), \\"Hey\\");
+"
+`;
+
+exports[`attach-display-name does alter consts with TaggedTemplateExpressions: does alter consts with TaggedTemplateExpressions 1`] = `
+"
+const Hey = f\`cool template string\`;
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+var $attachDisplayName = function (value, name) {
+  if (typeof value === 'function') {
+    try {
+      value.displayName = name;
+    } catch (error) {}
+  }
+
+  return value;
+};
+
+const Hey = $attachDisplayName(f\`cool template string\`, \\"Hey\\");
+"
+`;
+
+exports[`attach-display-name does alter lets with CallExpressions: does alter lets with CallExpressions 1`] = `
+"
+let Hey = f();
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+var $attachDisplayName = function (value, name) {
+  if (typeof value === 'function') {
+    try {
+      value.displayName = name;
+    } catch (error) {}
+  }
+
+  return value;
+};
+
+let Hey = $attachDisplayName(f(), \\"Hey\\");
+"
+`;
+
+exports[`attach-display-name does alter vars with CallExpressions: does alter vars with CallExpressions 1`] = `
+"
+var Hey = f();
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+var $attachDisplayName = function (value, name) {
+  if (typeof value === 'function') {
+    try {
+      value.displayName = name;
+    } catch (error) {}
+  }
+
+  return value;
+};
+
+var Hey = $attachDisplayName(f(), \\"Hey\\");
+"
+`;
+
+exports[`attach-display-name does not act strangely with multiple consts: does not act strangely with multiple consts 1`] = `
+"
+const Hey = f();
+const There = g();
+const Boy = h();
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+var $attachDisplayName = function (value, name) {
+  if (typeof value === 'function') {
+    try {
+      value.displayName = name;
+    } catch (error) {}
+  }
+
+  return value;
+};
+
+const Hey = $attachDisplayName(f(), \\"Hey\\");
+const There = $attachDisplayName(g(), \\"There\\");
+const Boy = $attachDisplayName(h(), \\"Boy\\");
+"
+`;
